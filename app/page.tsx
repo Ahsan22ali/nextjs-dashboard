@@ -47,7 +47,9 @@ export default function Page() {
         className="block md:hidden"
         alt="Screenshot of the dashboard project showing mobile version"
       />
-     
+     <Button className="hidden md:block">
+        <Link href="/dashboard">Go to Dashboard</Link>
+      </Button>
         </div>
       </div>
     </main>
