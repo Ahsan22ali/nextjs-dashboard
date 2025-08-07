@@ -62,6 +62,15 @@ export async function fetchCardData() {
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
 
+
+          // Wait for all promises to resolve and ut reduces the number of queries to the database and waterfall condition
+    // This is more efficient than awaiting each query sequentially.
+    // It allows the database to handle multiple queries concurrently.
+    // This is especially useful for performance in production applications.
+    // It also helps to avoid the "waterfall" effect where each query waits for the previous one to complete.
+    // This is a common pattern in modern web applications to improve performance.
+
+    
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
