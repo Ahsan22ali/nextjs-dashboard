@@ -70,7 +70,7 @@ export async function fetchCardData() {
     // It also helps to avoid the "waterfall" effect where each query waits for the previous one to complete.
     // This is a common pattern in modern web applications to improve performance.
 
-    
+
     const data = await Promise.all([
       invoiceCountPromise,
       customerCountPromise,
