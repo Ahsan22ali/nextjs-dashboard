@@ -5,7 +5,12 @@ import { CreateInvoice } from '@/app/ui/invoices/buttons';
 import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
-import { fetchFilteredInvoices, fetchInvoicesPages } from '@/app/lib/data';
+import {fetchFilteredInvoices, fetchInvoicesPages } from '@/app/lib/data';
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Invoices | Acme Dashboard',
+};
  
 export default async function Page(props: {
   searchParams?: Promise<{
